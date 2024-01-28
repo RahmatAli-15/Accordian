@@ -1,0 +1,53 @@
+CSS....
+#FAQs{
+  
+  padding: 40px;
+  line-height: 1.6rem;
+  color: #000000;
+  background-color: #f2f2f2;  
+  border-radius: 50px;
+}
+
+#FAQs h1{
+  text-align:center;
+  margin-bottom: 15px;
+  color: #021250;
+   background-color: #f2f2f2;  
+ 
+}
+
+
+
+.accordian{
+  background-color: white;
+  padding: 4px 16px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.ques{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon{
+  margin-right: 16px;
+  transition: transform 0.2s;
+}
+
+.icon.active{
+  transform: rotate(-180deg);
+ 
+}
+
+.answer{
+  color: rgb(44, 44, 44);
+  font-size: small;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s
+}
