@@ -1,0 +1,140 @@
+HTML....
+<section id="FAQs">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="accordian">
+      <div class="ques">
+        <h4>Who can donate blood?</h4>
+        </h4>
+        <i class="icon fa-solid fa-caret-down"></i>
+      </div>
+      <div class="answer">
+        <h4>Generally, individuals between the ages of 18 and 65 who are in good health and meet specific eligibility criteria are eligible to donate blood. Some factors, such as weight, recent travel, and medical history, may affect eligibility.</h4>
+        </div>
+    </div>
+
+    <div class="accordian">
+      <div class="ques">
+        <h4>How often can I donate blood?</h4>
+        </h4>
+        <i class="icon fa-solid fa-caret-down"></i>
+      </div>
+      <div class="answer">
+        <h4>The frequency of blood donation varies by country and organization, but it is typically every 8 to 12 weeks. This allows the body to replenish the donated blood components.</h4>
+        </div>
+    </div>
+
+    <div class="accordian">
+      <div class="ques">
+        <h4>Is it safe to donate blood?</h4>
+        </h4>
+        <i class="icon fa-solid fa-caret-down"></i>
+      </div>
+      <div class="answer">
+        <h4>Yes, blood donation is safe when conducted in a controlled environment by trained professionals. Sterile, disposable equipment is used for each donation to ensure donor safety.</h4>
+        </div>
+    </div>
+
+
+    <div class="accordian">
+      <div class="ques">
+        <h4>What happens to the donated blood?</h4>
+        </h4>
+        <i class="icon fa-solid fa-caret-down"></i>
+      </div>
+      <div class="answer">
+        <h4>Donated blood is separated into its components (red blood cells, plasma, platelets) and tested for infectious diseases. The different components are then used to treat various medical conditions.</h4>
+        </div>
+    </div>
+
+    <div class="accordian">
+      <div class="ques">
+        <h4>Can I donate blood if I have certain medical conditions or take medications?</h4>
+        </h4>
+        <i class="icon fa-solid fa-caret-down"></i>
+      </div>
+      <div class="answer">
+        <h4>Eligibility criteria vary, but individuals with certain medical conditions or those taking specific medications may be deferred from donating blood. It's important to discuss your health history with the screening staff.</h4>
+        </div>
+    </div>
+
+  </section>
+
+
+
+CSS....
+#FAQs{
+  
+  padding: 40px;
+  line-height: 1.6rem;
+  color: #000000;
+  background-color: #f2f2f2;  
+  border-radius: 50px;
+}
+
+#FAQs h1{
+  text-align:center;
+  margin-bottom: 15px;
+  color: #021250;
+   background-color: #f2f2f2;  
+ 
+}
+
+
+
+.accordian{
+  background-color: white;
+  padding: 4px 16px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.ques{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon{
+  margin-right: 16px;
+  transition: transform 0.2s;
+}
+
+.icon.active{
+  transform: rotate(-180deg);
+ 
+}
+
+.answer{
+  color: rgb(44, 44, 44);
+  font-size: small;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s
+}
+
+
+JS....
+const accordians=document.querySelectorAll('.accordian');
+ 
+accordians.forEach(accordian=>{
+ const icon=accordian.querySelector('.icon');
+ const answer=accordian.querySelector('.answer');
+
+  accordian.addEventListener('click', ()=>{
+
+  if(icon.classList.contains('active')){
+    icon.classList.remove('active');
+    answer.style.maxHeight=null;
+  }else{
+    icon.classList.add('active');
+    answer.style.maxHeight=answer.scrollHeight+'px';
+  }
+
+})
+
+
+})
